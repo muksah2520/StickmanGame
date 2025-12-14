@@ -19,15 +19,21 @@ var Bullet= preload("res://scenes/bullet.tscn")
 func _physics_process(delta: float) -> void:
 	velocity.y += gravity * delta
 	
-	velocity.x = Input.get_axis(move_left_action,move_right_action)*speed
+	var desired_dirn = Input.get_axis(move_left_action,move_right_action)
+	if desired_dirn == 0:
+		$AnimatedSprite2D.play("idle")
+		
+	velocity.x = desired_dirn * speed
 	if Input.is_action_just_pressed(jump_action)  and is_on_floor():
 		velocity.y=jump_speed
 	if Input.is_action_just_pressed(move_left_action) and direction == 1:
 		scale.x = -1
 		direction = -1
+		$AnimatedSprite2D.play("player_running")
 	elif Input.is_action_just_pressed(move_right_action) and direction == -1:
 		scale.x = -1
 		direction = 1
+		$AnimatedSprite2D.play("player_running")
 	move_and_slide()
 	if Input.is_action_just_pressed(shoot_action):
 		shoot()

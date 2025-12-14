@@ -1,18 +1,47 @@
-[gd_scene load_steps=4 format=3 uid="uid://ddwktrparwu1j"]
+[gd_scene load_steps=7 format=3 uid="uid://ddwktrparwu1j"]
 
 [ext_resource type="Script" uid="uid://duamk4oxbjidi" path="res://scripts/stickman_base.gd" id="1_eb6xy"]
 [ext_resource type="Texture2D" uid="uid://da1s21hsjvwwf" path="res://sprites/stickman.png" id="1_u3e5g"]
+[ext_resource type="Texture2D" uid="uid://70vxmafj5e0h" path="res://sprites/stickman_2.png" id="2_s1e54"]
+[ext_resource type="Texture2D" uid="uid://dtqifq3ci6qi1" path="res://sprites/stickman_3.png" id="3_w1qoq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eb6xy"]
 size = Vector2(9, 31)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fj77h"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_s1e54")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_w1qoq")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_u3e5g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_s1e54")
+}],
+"loop": true,
+"name": &"player_running",
+"speed": 5.0
+}]
 
 [node name="CharacterBody2D" type="CharacterBody2D" groups=["player"]]
 collision_layer = 3
 collision_mask = 3
 script = ExtResource("1_eb6xy")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_u3e5g")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
@@ -21,3 +50,7 @@ shape = SubResource("RectangleShape2D_eb6xy")
 
 [node name="bullet_spawn" type="Marker2D" parent="."]
 position = Vector2(11, -2)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_fj77h")
+animation = &"player_running"
