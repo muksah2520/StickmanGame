@@ -1,8 +1,10 @@
 extends CharacterBody2D
 class_name Base_character
-var speed = 150
-var jump_speed = -700
-var gravity = 4000
+var speed = 110
+#var jump_speed = -700
+#var gravity = 4000
+var jump_speed = -600
+var gravity = 3000
 var direction = 1
 
 @export var move_left_action := ""
