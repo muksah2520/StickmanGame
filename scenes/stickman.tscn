@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://ddwktrparwu1j"]
+[gd_scene load_steps=8 format=3 uid="uid://ddwktrparwu1j"]
 
 [ext_resource type="Script" uid="uid://duamk4oxbjidi" path="res://scripts/stickman_base.gd" id="1_eb6xy"]
 [ext_resource type="Texture2D" uid="uid://da1s21hsjvwwf" path="res://sprites/stickman.png" id="1_u3e5g"]
 [ext_resource type="Texture2D" uid="uid://70vxmafj5e0h" path="res://sprites/stickman_2.png" id="2_s1e54"]
 [ext_resource type="Texture2D" uid="uid://dtqifq3ci6qi1" path="res://sprites/stickman_3.png" id="3_w1qoq"]
+[ext_resource type="AudioStream" uid="uid://cyckdnu50ysro" path="res://sounds/gun_shot.mp3" id="5_w1qoq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eb6xy"]
 size = Vector2(9, 31)
@@ -54,3 +55,6 @@ position = Vector2(11, -2)
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_fj77h")
 animation = &"player_running"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_w1qoq")
