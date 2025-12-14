@@ -13,6 +13,7 @@ var direction = 1
 var Bullet= preload("res://scenes/bullet.tscn")
 
 
+
 	
 	
 func _physics_process(delta: float) -> void:
