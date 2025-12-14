@@ -1,0 +1,64 @@
+[gd_scene load_steps=5 format=3 uid="uid://b5pi8r3xggx44"]
+
+[ext_resource type="Script" uid="uid://c2laveykpucf6" path="res://scripts/player_1_win.gd" id="1_7l4d6"]
+[ext_resource type="Texture2D" uid="uid://c4bdl6kk58xvh" path="res://sprites/istockphoto-2062148631-612x612.jpg" id="1_xsvpi"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7l4d6"]
+bg_color = Color(0.939285, 0.252994, 0, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8nkn5"]
+bg_color = Color(0.905882, 0.313726, 0.180392, 1)
+
+[node name="player1_win" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7l4d6")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.5
+offset_top = -64.5
+offset_right = 250.5
+offset_bottom = 64.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 45
+theme_override_styles/normal = SubResource("StyleBoxFlat_7l4d6")
+text = "RESTART GAME"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -480.0
+offset_top = 73.0
+offset_right = 472.0
+offset_bottom = 198.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 80
+theme_override_styles/normal = SubResource("StyleBoxFlat_8nkn5")
+text = "Player 1 Wins"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -10
+position = Vector2(571.5, 320)
+scale = Vector2(1.88072, 2.10458)
+texture = ExtResource("1_xsvpi")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

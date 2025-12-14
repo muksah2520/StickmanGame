@@ -11,9 +11,14 @@ config_version=5
 [application]
 
 config/name="flappy_bird"
-run/main_scene="uid://dys5nqdbrq5ug"
+run/main_scene="uid://b1ce67pit6gjt"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
+
+[global_group]
+
+player2=""
+player1=""
 
 [input]
 
