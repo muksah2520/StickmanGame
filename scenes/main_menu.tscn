@@ -1,0 +1,45 @@
+[gd_scene load_steps=4 format=3 uid="uid://b1ce67pit6gjt"]
+
+[ext_resource type="Script" uid="uid://ly0vgwum0o0c" path="res://scripts/main_menu.gd" id="1_ekxnf"]
+[ext_resource type="Texture2D" uid="uid://c4bdl6kk58xvh" path="res://sprites/istockphoto-2062148631-612x612.jpg" id="1_l6cm7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ekxnf"]
+bg_color = Color(0.302578, 0.708322, 5.77569e-07, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ekxnf")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -212.5
+offset_top = -40.5
+offset_right = 212.5
+offset_bottom = 40.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 45
+theme_override_styles/normal = SubResource("StyleBoxFlat_ekxnf")
+text = "START GAME"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -11
+position = Vector2(588.5, 326.5)
+scale = Vector2(1.93627, 2.12745)
+texture = ExtResource("1_l6cm7")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
